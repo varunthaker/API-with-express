@@ -7,7 +7,6 @@ const router = express.Router();
 router.get("/products", async (req, res) => {
   console.log(Product);
   try {
-    await dbConnect();
     const allProducts = await Product.find();
     console.log(allProducts);
     res.status(200).json(allProducts);
